@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s1;
+
+    // Directly assign values
+    s1.id = 101;
+    strcpy(s1.name, "Nithya");
+    s1.marks = 85.5;
+
+    // Display student details
+    printf("Student ID   : %d\n", s1.id);
+    printf("Student Name : %s\n", s1.name);
+    printf("Marks        : %.2f\n", s1.marks);
+
+    return 0;
+}
