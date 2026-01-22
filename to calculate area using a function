@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+// Function to calculate area of rectangle
+float area(float length, float width) {
+    return length * width;
+}
+
+int main() {
+    // Directly assign length and width
+    float length = 10.0, width = 5.0;
+    float result = area(length, width);
+
+    printf("Area of rectangle = %.2f\n", result);
+
+    return 0;
+}
