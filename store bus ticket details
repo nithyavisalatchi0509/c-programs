@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for Bus Ticket
+struct BusTicket {
+    int ticketNumber;
+    char passengerName[50];
+    char source[50];
+    char destination[50];
+    float fare;
+};
+
+int main() {
+    struct BusTicket ticket;
+
+    // Input bus ticket details
+    printf("Enter Ticket Number: ");
+    scanf("%d", &ticket.ticketNumber);
+
+    printf("Enter Passenger Name: ");
+    scanf(" %[^\n]", ticket.passengerName); // Read string with spaces
+
+    printf("Enter Source: ");
+    scanf(" %[^\n]", ticket.source);
+
+    printf("Enter Destination: ");
+    scanf(" %[^\n]", ticket.destination);
+
+    printf("Enter Fare: ");
+    scanf("%f", &ticket.fare);
+
+    // Display bus ticket details
+    printf("\n--- Bus Ticket Details ---\n");
+    printf("Ticket Number: %d\n", ticket.ticketNumber);
+    printf("Passenger Name: %s\n", ticket.passengerName);
+    printf("Source: %s\n", ticket.source);
+    printf("Destination: %s\n", ticket.destination);
+    printf("Fare: %.2f\n", ticket.fare);
+
+    return 0;
+}
