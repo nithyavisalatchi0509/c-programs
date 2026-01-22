@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for Product
+struct Product {
+    int productID;
+    char name[50];
+    char category[30];
+    float price;
+    int quantity;
+};
+
+int main() {
+    struct Product product;
+
+    // Input product details
+    printf("Enter Product ID: ");
+    scanf("%d", &product.productID);
+
+    printf("Enter Product Name: ");
+    scanf(" %[^\n]", product.name);  // Read string with spaces
+
+    printf("Enter Product Category: ");
+    scanf(" %[^\n]", product.category);
+
+    printf("Enter Product Price: ");
+    scanf("%f", &product.price);
+
+    printf("Enter Quantity: ");
+    scanf("%d", &product.quantity);
+
+    // Display product details
+    printf("\n--- Product Details ---\n");
+    printf("Product ID: %d\n", product.productID);
+    printf("Name: %s\n", product.name);
+    printf("Category: %s\n", product.category);
+    printf("Price: %.2f\n", product.price);
+    printf("Quantity: %d\n", product.quantity);
+
+    return 0;
+}
