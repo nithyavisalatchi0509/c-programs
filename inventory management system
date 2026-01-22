@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Product {
+    int id;
+    char name[50];
+    int quantity;
+    float price;
+};
+
+int main() {
+    struct Product p;
+    FILE *fp;
+    int choice;
+
+    do {
+        printf("\nInventory Management System\n");
+        printf("1. Add Product\n2. Display Products\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                fp = fopen("inventory.txt", "a"); // Append mode
+                if (!fp) { printf("Unable to open file.\n"); break; }
+
+                printf("Enter Product ID: ");
+                scanf("%d", &p.id);
+                printf("Enter Product Name: ");
+                scanf(" %[^\n]", p.name);
+                printf("Enter Quantity: ");
+                scanf("%d", &p.quantity);
+                printf("Enter Price: ");
+                scanf("%f", &p.price);
+
+                fprintf(fp, "%d %s %d %.2f\n", p.id, p.name, p.quantity, p.price);
+                fclose(fp);
+                printf("Product added successfully.\n");
+                break;
+
+            case 2:
+                fp = fopen("inventory.txt", "r");
+                if (!fp) { printf("No products found.\n"); break; }
+
+                printf("\n--- Inventory ---\n");
+                while (fscanf(fp, "%d %[^\n] %d %f", &p.id, p.name, &p.quantity, &p.price) != EOF) {
+                    printf("ID: %d, Name: %s, Quantity: %d, Price: %.2f\n", p.id, p.name, p.quantity, p.price);
+                }
+                fclose(fp);
+                break;
+
+            case 3:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid choice. Try again.\n");
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
