@@ -1,0 +1,16 @@
+#include <stdio.h>
+void displayMenu() {
+    printf("---- MENU ----\n");
+    printf("1. Add Item\n");
+    printf("2. Remove Item\n");
+    printf("3. View Cart\n");
+    printf("4. Checkout\n");
+    printf("5. Exit\n");
+}
+
+int main() {
+    // Call the menu function
+    displayMenu();
+
+    return 0;
+}
