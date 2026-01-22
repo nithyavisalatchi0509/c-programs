@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for Patient
+struct Patient {
+    int patientID;
+    char name[50];
+    int age;
+    char gender[10];
+    char disease[50];
+};
+
+int main() {
+    struct Patient patient;
+
+    // Input patient details
+    printf("Enter Patient ID: ");
+    scanf("%d", &patient.patientID);
+
+    printf("Enter Patient Name: ");
+    scanf(" %[^\n]", patient.name); // Read string with spaces
+
+    printf("Enter Age: ");
+    scanf("%d", &patient.age);
+
+    printf("Enter Gender: ");
+    scanf(" %[^\n]", patient.gender);
+
+    printf("Enter Disease: ");
+    scanf(" %[^\n]", patient.disease);
+
+    // Display patient details
+    printf("\n--- Patient Details ---\n");
+    printf("Patient ID: %d\n", patient.patientID);
+    printf("Name: %s\n", patient.name);
+    printf("Age: %d\n", patient.age);
+    printf("Gender: %s\n", patient.gender);
+    printf("Disease: %s\n", patient.disease);
+
+    return 0;
+}
