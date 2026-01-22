@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for Course
+struct Course {
+    int courseID;
+    char courseName[50];
+    char instructor[50];
+    int duration;   // in weeks
+    float fees;
+};
+
+int main() {
+    struct Course course;
+
+    // Input course details
+    printf("Enter Course ID: ");
+    scanf("%d", &course.courseID);
+
+    printf("Enter Course Name: ");
+    scanf(" %[^\n]", course.courseName); // Read string with spaces
+
+    printf("Enter Instructor Name: ");
+    scanf(" %[^\n]", course.instructor);
+
+    printf("Enter Duration (in weeks): ");
+    scanf("%d", &course.duration);
+
+    printf("Enter Course Fees: ");
+    scanf("%f", &course.fees);
+
+    // Display course details
+    printf("\n--- Course Details ---\n");
+    printf("Course ID: %d\n", course.courseID);
+    printf("Course Name: %s\n", course.courseName);
+    printf("Instructor: %s\n", course.instructor);
+    printf("Duration: %d weeks\n", course.duration);
+    printf("Fees: %.2f\n", course.fees);
+
+    return 0;
+}
