@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for Library Book
+struct Book {
+    int bookID;
+    char title[50];
+    char author[50];
+    int year;
+    float price;
+};
+
+int main() {
+    struct Book book;
+
+    // Input book details
+    printf("Enter Book ID: ");
+    scanf("%d", &book.bookID);
+
+    printf("Enter Book Title: ");
+    scanf(" %[^\n]", book.title);  // Read string with spaces
+
+    printf("Enter Author Name: ");
+    scanf(" %[^\n]", book.author);
+
+    printf("Enter Year of Publication: ");
+    scanf("%d", &book.year);
+
+    printf("Enter Price: ");
+    scanf("%f", &book.price);
+
+    // Display book details
+    printf("\n--- Book Details ---\n");
+    printf("Book ID: %d\n", book.bookID);
+    printf("Title: %s\n", book.title);
+    printf("Author: %s\n", book.author);
+    printf("Year: %d\n", book.year);
+    printf("Price: %.2f\n", book.price);
+
+    return 0;
+}
