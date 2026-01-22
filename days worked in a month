@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int totalDays, i, workingDays = 0;
+
+    printf("Enter total days in the month: ");
+    scanf("%d", &totalDays);
+
+    for(i = 1; i <= totalDays; i++) {
+        if(i % 7 != 0)   // Assuming Sunday is every 7th day
+            workingDays++;
+    }
+
+    printf("Number of working days = %d\n", workingDays);
+
+    return 0;
+}
