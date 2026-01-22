@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+// Function to convert Celsius to Fahrenheit
+float celsiusToFahrenheit(float c) {
+    return (c * 9/5) + 32;
+}
+
+int main() {
+    // Directly assign temperature in Celsius
+    float celsius = 37.0;
+
+    float fahrenheit = celsiusToFahrenheit(celsius);
+
+    printf("%.2f Celsius = %.2f Fahrenheit\n", celsius, fahrenheit);
+
+    return 0;
+}
