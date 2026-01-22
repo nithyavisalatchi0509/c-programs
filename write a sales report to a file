@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+struct Sales {
+    int productID;
+    char productName[50];
+    int quantitySold;
+    float pricePerUnit;
+    float totalAmount;
+};
+
+int main() {
+    struct Sales sale;
+    FILE *fp = fopen("sales_report.txt", "w");
+    if (!fp) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    // Input sales details
+    printf("Enter Product ID: ");
+    scanf("%d", &sale.productID);
+
+    printf("Enter Product Name: ");
+    scanf(" %[^\n]", sale.productName);
+
+    printf("Enter Quantity Sold: ");
+    scanf("%d", &sale.quantitySold);
+
+    printf("Enter Price per Unit: ");
+    scanf("%f", &sale.pricePerUnit);
+
+    // Calculate total amount
+    sale.totalAmount = sale.quantitySold * sale.pricePerUnit;
+
+    // Write sales report to file
+    fprintf(fp, "Product ID: %d\nProduct Name: %s\nQuantity Sold: %d\nPrice per Unit: %.2f\nTotal Amount: %.2f\n",
+            sale.productID, sale.productName, sale.quantitySold, sale.pricePerUnit, sale.totalAmount);
+
+    fclose(fp);
+    printf("Sales report saved to file.\n");
+    return 0;
+}
