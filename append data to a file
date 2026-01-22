@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char name[50];
+    int age;
+
+    // Open file in append mode
+    fp = fopen("data.txt", "a");
+    if (!fp) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    // Input data to append
+    printf("Enter Name: ");
+    scanf(" %[^\n]", name);
+
+    printf("Enter Age: ");
+    scanf("%d", &age);
+
+    // Append data to file
+    fprintf(fp, "Name: %s, Age: %d\n", name, age);
+
+    fclose(fp);
+    printf("Data appended to file successfully.\n");
+    return 0;
+}
